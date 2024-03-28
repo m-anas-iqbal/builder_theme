@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+          font-family: EtihadAltis-Medium, arial, sans-serif;
+        }
+        .divider{
+          height: 0px;
+        }
+        .blueHeading{
+              /*background-color: #071688;*/
+              color: #000000;
+              text-align: left;
+              padding: 13px;
+              width: auto;
+              text-transform: uppercase;
+              font-size: 38px;
+              float: left;
+              /*border-right: #dc2433 solid;*/
+              margin-bottom: 15px !important;
+              margin-left: -14px;
+        }
+        .blueHeadingH3{
+          /*background-color: #071688;*/
+          color: #000000;
+          text-align: left;
+          padding: 0px 13px;
+          width: 100%;
+          text-transform: uppercase;
+          font-size: 33px;
+          float: left;
+          /*border-right: #dc2433 solid;*/
+          margin-bottom: 5px !important;
+          margin-left: -14px;
+        }
+        /* The Overlay (background) */
+        .overlay {
+          /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+          height: 100%;
+          width: 0;
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          background-color: rgba(255, 255, 255, 0.84);  
+          overflow-x: hidden; /* Disable horizontal scroll */
+          cursor: pointer;
+          /*transition: 0.5s;  0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        }
+  
+        /* Position the content inside the overlay */
+        .overlay-content {
+          position: relative;
+          top: 25%; /* 25% from the top */
+          width: 100%; /* 100% width */
+          text-align: center; /* Centered text/links */
+          margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+        }
+  
+        /* The navigation links inside the overlay */
+        .overlay a {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 36px;
+          color: #818181;
+          display: block; /* Display block instead of inline */
+          transition: 0.3s; /* Transition effects on hover (color) */
+        }
+  
+        /* When you mouse over the navigation links, change their color */
+        .overlay a:hover, .overlay a:focus {
+          color: #f1f1f1;
+        }
+  
+        /* Position the close button (top right corner) */
+        .overlay .closebtn {
+          position: absolute;
+          top: 20px;
+          right: 45px;
+          font-size: 60px;
+        }
+  
+        /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+        @media screen and (max-height: 450px) {
+          .overlay a {font-size: 20px}
+          .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+          }
+        }
+  
+        .page .section-57{
+          padding-top: 0px;
+        }
+        .blueHeading{
+          padding: 13px 0px;
+        }
+     
+        .iconText{
+          font-size: 15px;
+          text-transform: uppercase;   
+          /*font: -webkit-mini-control;*/
+        }
+        .box-icon:hover{
+          -ms-transform: scale(1.2); /* IE 9 */
+          -webkit-transform: scale(1.2); /* Safari 3-8 */
+          transform: scale(1.2); 
+        }
+        .shell{
+          margin-top: 13px !important;
+        }
+        .slider-menu-position .rd-navbar-wrap{
+          top: 25px;
+        }
+          .pulll-left{
+              float: left;
+          }
+          .pulll-right{
+              float: right;
+          }
+          .btnPsl{
+              border: 1px solid white;
+              color: white;
+              padding: 7px;
+              margin-top: 9px;
+          }
+          .btnPsl:hover{
+              color: white;
+          }
+          .pslText{
+              text-transform: capitalize;
+              font-size: 20px;
+              float: left;
+              padding-top: 19px;
+          }
+          .smart-banner
+          {
+              display: none;
+          }
+          .p2
+          {
+              padding: 3px;
+          }
+          .btn-download
+          {
+              background-color: #001688 !important;
+              border-color: #001688 !important;
+                  padding: 8px;
+          }
+          @media only screen and (max-width:690px)
+          {
+              .btnPsl{
+                  margin-top: 5px;
+  
+              }
+              .pulll-left{
+                  width: 50%;
+              }
+              .pulll-right{
+                  width: 50%;
+              }
+              .pslText{
+                  display: none;
+              }
+  
+          }
+      </style>
+  
+        <style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
+  .tc{
+    height: 335px;text-align:justify;
+  }
+  @media screen and (max-width: 1024px)
+  {
+    .tc{
+      height: auto !important;
+    }
+  }
+  .iconTitle {
+    height: 73px; 
+    padding: 26px 0px 0px 70px;
+    font-size: 18px;
+    font-weight: black;
+    color: black; 
+  }
+  .t1{
+    background: url('icons/t1.png');
+     background-repeat: no-repeat;
+  }
+  .t2{
+    background: url('icons/t2.png');
+     background-repeat: no-repeat;
+  }
+  .t3{
+    background: url('icons/t3.png');
+     background-repeat: no-repeat; 
+     margin-top: 0px !important;
+  }
+  .t4{
+    background: url('icons/t4.png');
+     background-repeat: no-repeat;
+  }
+  .t5{
+    background: url('icons/t5.png');
+     background-repeat: no-repeat;
+     /*background-position-y: -5px;*/
+  }
+  .t6{
+    background: url('icons/t6.png');
+     background-repeat: no-repeat;
+  }
+  .t7{
+    background: url('icons/t7.png');
+     background-repeat: no-repeat;
+  }
+  .t8{
+    background: url('icons/t8.png');
+     background-repeat: no-repeat; 
+     /*background-position-y: 2px;*/
+     margin-top: 0px;
+  }
+  .t9{
+    background: url('icons/t9.png');
+     background-repeat: no-repeat;
+  }
+  .t10{
+    background: url('icons/t10.png');
+     background-repeat: no-repeat;
+  }
+  .t11{
+    background: url('icons/t11.png');
+     background-repeat: no-repeat;
+  }
+  .t12{
+    background: url('icons/t12.png');
+     background-repeat: no-repeat;
+  }
+.jumptarget::before {
+  content:"";
+  display:block;
+  height:50px; /* fixed header height*/
+  margin:-50px 0 0; /* negative fixed header height */
+}
+
+
+@media screen and (min-height: 450px) {
+  
+  .iconTitle {
+    height: 73px; 
+    padding: 26px 0px 0px 70px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black; 
+  }
+  .t3{
+    background: url('icons/t3.png');
+     background-repeat: no-repeat;
+     margin-top: 55px ;
+  }
+  .t8{
+    background: url('icons/t8.png');
+     background-repeat: no-repeat;
+     margin-top: 55px ;
+  }
+}
+
+</style>
+    <title>Document</title>
+</head>
+<body>
+    <section class="section-90 section-md-111 text-left">
+        <div class="shell">
+          <div class="range range-xs-center">
+            
+            <div class="cell-sm-12 cell-md-12">
+                  <div class=" col-md-12 "><h2 class="text-bold text-center text-md-left blueHeading">World Class Travel Experience</h2></div>
+                <p style="text-align:justify;" id="0">It is a promise that Road Master makes to it’s customers, that by owing the brand, you don’t need to look out for any other travelling partner. We are committed to provide you a world class travel experience with unparalleled services, ensuring that you have pleasant &amp; memorable journey every time.</p> <br><br><div class="col-md-4 tc " id="1">
+                            <p class="iconTitle t1">
+                            Delectable Snacks Onboard </p>
+                            <p>Food is considered to be the core essence of every journey, we at Road Master allow its customers to treat their taste buds with delightful snacks, especially prepared by our cuisine partner; Kitchen Cuisine.</p>
+                        </div><div class="col-md-4 tc " id="2">
+                            <p class="iconTitle t2">
+                            Eagle Eye Surveillance </p>
+                            <p>Your security is our topmost priority. With the assistance of Road Master’s Eagle Eye Surveillance, travelling with us ensures that you and your family enjoy the journey in absence of any fear. For passenger’s luggage, Road Master buses are equipped with an innovative air pump technology, operating within the luggage compartment that creates a vacuum and prevents passenger’s luggage from any dust or rain water.</p>
+                        </div><div class="col-md-4 tc " id="3">
+                            <p class="iconTitle t3">
+                            ACE Entertainment System </p>
+                            <p>Never get bored when you cruise with Road Master. Watch your favorite movies &amp; TV shows, listen to trending music, play exciting games and stay updated with latest news through e-newspaper. Our high-definition entertainment system “ACE” will keep you hooked the entire journey.</p>
+                        </div><div class="col-md-4 tc " id="4">
+                            <p class="iconTitle t4">
+                            On Time Every Time </p>
+                            <p>“On Time Every Time” is our derive force which allow us to take our customers to their destinations on time. Whilst you are enjoying the experience of journey on Road Master, you can fully trust us to help you reach your destination on time every time.</p>
+                        </div><div class="col-md-4 tc " id="5">
+                            <p class="iconTitle t5">
+                            Air Purification System </p>
+                            <p>Road Master takes pride in introducing the first ever Air Purification System in our buses which keeps the cabin air clean, healthy and refreshing so that our valued passengers can relax with every breath.</p>
+                        </div><div class="col-md-4 tc " id="6">
+                            <p class="iconTitle t6">
+                            Free wifi </p>
+                            <p>Whether you are cruising or waiting at the terminal, Road Master ensures that you stay connected to your loved ones with free uninterrupted Wi-Fi throughout your journey. </p>
+                        </div>  <div class=" col-md-12 "><h2 class="text-bold text-center text-md-left blueHeading">World Class Terminal Experience</h2></div>
+                <p style="text-align:justify;" id="101">Behind every product shines the hallmark; a distinct feature that enable to distinguish the product in a group. Our terminal offers a nonconventional space that comes with awe inspiring features. You are now able to spend your time with comfort while waiting in the lounge by availing our excellent service and make your travel experience a memorable one.</p> <br><br><div class="col-md-4 tc " id="7">
+                            <p class="iconTitle t7">
+                            Hybrid Ticketing System </p>
+                            <p>For the first time in Pakistan, enjoy Hybrid Ticketing System that gives you the advantage of early booking, changes with peak hours or off-peak hours and benefits of flexible fares that come with the position &amp; placement of your seat in the bus. This is a low cost flexible model tailor made to suit your travel needs. The Road Master ticketing service is available online at www.roadmaster.pk or through the quick and user-friendly Android and iOS apps.</p>
+                        </div><div class="col-md-4 tc " id="8">
+                            <p class="iconTitle t8">
+                            Master Collections </p>
+                            <p>Road Master redefines Terminal experience; now choose from vast range of gifts, souvenirs, beauty and electronics for your loved ones and make your journey memorable.</p>
+                        </div><div class="col-md-4 tc " id="9">
+                            <p class="iconTitle t9">
+                            Little Masters Kids Club </p>
+                            <p>We welcome you to a world of non-stop fun and engaging games that all kids would love. Now travelling is double the fun for kids with Little Masters Kids Club. Make your kids travel with a bunch of fun filled activities at the terminal every time you a plan a journey with us.</p>
+                        </div><div class="col-md-4 tc " id="10">
+                            <p class="iconTitle t10">
+                            Master Fashion Stop </p>
+                            <p>Travel with style; now update your wardrobe while traveling. Now get hold of trendy fashion apparel and accessories at our terminal.</p>
+                        </div><div class="col-md-4 tc " id="11">
+                            <p class="iconTitle t11">
+                            Masterpieces Hair Salon </p>
+                            <p>Now, you can arrive at your destination fresh and prepared to take on the world with our Hair Salon and Hammam facilities at the terminal. This is just the place to relax, get some personal grooming done and make your travel stress disappear.</p>
+                        </div><div class="col-md-4 tc " id="12">
+                            <p class="iconTitle t12">
+                            24/7 Customer Support </p>
+                            <p>Our team of experienced and dedicated individuals has a comprehensive knowledge of transport industry. Their relevant skills enable them to guide &amp; facilitate customers effectively which eventually make them a best fit to respond to our customer’s needs. The Road Master Online Customer Relationship Management is available on our website at www.roadmaster.pk and over the phone at our UAN 111-722-822. It guarantees timely responses to all customer queries, so that our valued customers can provide feedback and suggestions that will enable us to keep growing and innovating.</p>
+                        </div>                </div>
+            </div>
+          
+          </div>
+      </section>
+</body>
+</html>
